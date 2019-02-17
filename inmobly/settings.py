@@ -130,3 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+
+GOOGLE_OAUTH2_CLIENT_ID = '453944355146-q5c0a57ldspkddmcq65sk8emun3hdnef.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET = 'MBCpRJb6QYFaiZQ-Rzif85Gv'
+DOWNLOAD_PATH = '/home/amr'
