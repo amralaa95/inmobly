@@ -1,6 +1,7 @@
 # inmobly
+run GettingStart.sh: ./GettingStart.sh
 
-1-main url is http://127.0.0.1:8000/api for list and create playlist or channel, first time require authntication from google
+1-main url is http://127.0.0.1:8000/api for create playlist or channel, first time require authntication from google
 
 2- enter user channel name and choose type channel, https://www.youtube.com/user/AsapSCIENCE/videos
     so channel name is:  AsapSCIENCE, and wait to create videos for this channel.

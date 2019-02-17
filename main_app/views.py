@@ -39,6 +39,7 @@ class Oauth2CallbackView(View):
 class DownloadView(View):
     def get(self,request,video_id,*args,**kwargs):
         try:
+            video_exist = Video.objects.get(name=video_id)
             yt = YouTube("https://www.youtube.com/watch?v=%s" % video_id)
             yt.streams.first().download(settings.DOWNLOAD_PATH)
             return JsonResponse({'success': 'video downloaded in %s directory' % settings.DOWNLOAD_PATH}, status=200)

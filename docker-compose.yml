@@ -1,0 +1,21 @@
+version: '3'
+services:
+    web:
+        build: .
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db 
+    db:
+        image: mysql:5.7
+        restart: always
+        environment:
+            MYSQL_DATABASE: 'inmobly'
+            MYSQL_ROOT_PASSWORD: 'root'
+        ports:
+            - "3307:3306"
+        expose:
+            - "3306"
