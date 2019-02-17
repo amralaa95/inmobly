@@ -37,12 +37,20 @@ class Oauth2CallbackView(View):
         return redirect('list_api')
 
 class DownloadView(View):
-    def get(self,request,video_id,*args,**kwargs):
+    def get(self,request,playlist_id,*args,**kwargs):
         try:
-            video_exist = Video.objects.get(name=video_id)
-            yt = YouTube("https://www.youtube.com/watch?v=%s" % video_id)
-            yt.streams.first().download(settings.DOWNLOAD_PATH)
-            return JsonResponse({'success': 'video downloaded in %s directory' % settings.DOWNLOAD_PATH}, status=200)
+            videos_list = Video.objects.filter(fk_source__name=playlist_id)
+        
+            if videos_list.count() == 0:
+                return JsonResponse({'error': 'playlist not found'}, status=401)
+
+            for video_id in videos_list:
+                yt = YouTube("https://www.youtube.com/watch?v=%s" % video_id.name)
+                yt.streams.first().download(settings.DOWNLOAD_PATH)
+            
+            return JsonResponse({'success': 'playlist downloaded in %s directory' % settings.DOWNLOAD_PATH}, status=200)
+        
         except Exception as e:
-            return JsonResponse({'error': 'video not found'}, status=401)
+            print e
+            return JsonResponse({'error': 'playlist not found'}, status=401)
 

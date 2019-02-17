@@ -135,4 +135,4 @@ MEDIA_URL = '/media/'
 
 GOOGLE_OAUTH2_CLIENT_ID = '453944355146-q5c0a57ldspkddmcq65sk8emun3hdnef.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = 'MBCpRJb6QYFaiZQ-Rzif85Gv'
-DOWNLOAD_PATH = '/home/amr'
+DOWNLOAD_PATH = '/code'

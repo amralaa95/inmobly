@@ -9,7 +9,7 @@ run GettingStart.sh: ./GettingStart.sh
 3- enter playlist name and choose type playlist, https://www.youtube.com/watch?v=ztiHRiFXtoc& list=PLvFsG9gYFxY_2tiOKgs7b2lSjMwR89ECb
     so playlist name is: PLvFsG9gYFxY_2tiOKgs7b2lSjMwR89ECb, and wait to create videos for this playlist
 
-4- change in settings file DOWNLOAD_PATH to avilable local storage
+4- change in settings file DOWNLOAD_PATH to avilable local storage, if not change it will be downloaded in path of project
 
-5- download url is http://127.0.0.1:8000/download/video_name: http://127.0.0.1:8000/download/ztiHRiFXtoc and
-   wait to download video
+5- download url is http://127.0.0.1:8000/download/playlist_name: http://127.0.0.1:8000/download/PLRCzrSHS5u_HQuXr15gOMCIK-E-57A5vd and
+   wait to download playlist videos
